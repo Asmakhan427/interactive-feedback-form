@@ -105,17 +105,10 @@ Ensuring accessibility while maintaining an engaging visual design required bala
 
 ## Project Structure
 feedback-form/
-├── index.html # Main HTML file
-├── style.css # Complete styles with dark blue theme
-├── script.js # All JavaScript functionality
-├── README.md # Project documentation
-
-
-## Credits
-
-- JSONPlaceholder for providing the mock API
-- Google Fonts for typography
-- Built as part of the Web Development Track
+├── index.html 
+├── style.css 
+├── script.js 
+├── README.md 
 
 ## License
 
