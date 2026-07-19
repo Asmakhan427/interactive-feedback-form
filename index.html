@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💬 Your Feedback Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<div class="chat-wrapper">
+
+  <header class="chat-header">
+    <div class="header-content">
+      <div class="header-left">
+        <div class="avatar-container">
+          <div class="avatar-ring"><span class="avatar-emoji" id="avatarEmoji">🤖</span></div>
+          <div class="status-dot"></div>
+        </div>
+        <div class="header-info">
+          <h1 class="assistant-name">Feedback Guide</h1>
+          <p class="assistant-status" id="statusText">Online • Ready to help</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="greeting" id="greeting"></span>
+        <span class="step-counter" id="stepCounter">Step 1/5</span>
+      </div>
+    </div>
+    <div class="progress-bar-wrapper">
+      <div class="progress-bar-track"><div class="progress-bar-fill" id="progressFill"></div></div>
+    </div>
+  </header>
+
+  <div class="messages-container" id="messagesContainer" aria-live="polite"></div>
+
+  <!-- The real, accessible form. Only the current step's field is visible;
+       everything else is display:none. Each field keeps a proper <label for>. -->
+  <form id="feedbackForm" novalidate class="input-area">
+
+    <div class="form-status" id="formStatus" role="status" hidden></div>
+
+    <div class="field-step active" data-step="name">
+      <label for="name">Your name</label>
+      <div class="input-row">
+        <input type="text" id="name" name="name" autocomplete="name" aria-describedby="nameError">
+        <button type="button" class="send-btn" data-advance="name" aria-label="Send">➤</button>
+      </div>
+      <span class="error-message" id="nameError"></span>
+    </div>
+
+    <div class="field-step" data-step="email">
+      <label for="email">Your email</label>
+      <div class="input-row">
+        <input type="email" id="email" name="email" autocomplete="email" aria-describedby="emailError">
+        <button type="button" class="send-btn" data-advance="email" aria-label="Send">➤</button>
+      </div>
+      <span class="error-message" id="emailError"></span>
+    </div>
+
+    <div class="field-step" data-step="category">
+      <label for="category">Feedback category</label>
+      <div class="input-row">
+        <select id="category" name="category" aria-describedby="categoryError">
+          <option value="">Choose one…</option>
+          <option value="General">💬 General</option>
+          <option value="Bug report">🐛 Bug report</option>
+          <option value="Suggestion">💡 Suggestion</option>
+        </select>
+        <button type="button" class="send-btn" data-advance="category" aria-label="Send">➤</button>
+      </div>
+      <span class="error-message" id="categoryError"></span>
+    </div>
+
+    <fieldset class="field-step" data-step="rating">
+      <legend>How was your week?</legend>
+      <div class="rating-group">
+        <label class="rating-chip"><input type="radio" name="rating" value="1"><span>😔 Challenging</span></label>
+        <label class="rating-chip"><input type="radio" name="rating" value="2"><span>😐 Meh</span></label>
+        <label class="rating-chip"><input type="radio" name="rating" value="3"><span>🙂 Good</span></label>
+        <label class="rating-chip"><input type="radio" name="rating" value="4"><span>😊 Great</span></label>
+        <label class="rating-chip"><input type="radio" name="rating" value="5"><span>🤩 Amazing</span></label>
+      </div>
+      <span class="error-message" id="ratingError"></span>
+    </fieldset>
+
+    <div class="field-step" data-step="message">
+      <label for="message">Your reflection</label>
+      <div class="input-row">
+        <textarea id="message" name="message" rows="1" aria-describedby="messageError messageCounter"></textarea>
+        <button type="submit" id="submitBtn" class="send-btn" aria-label="Submit">
+          <span id="submitSpinner" class="spinner" hidden></span>
+          <span id="submitArrow">➤</span>
+        </button>
+      </div>
+      <div class="counter-row">
+        <span class="error-message" id="messageError"></span>
+        <div class="counter-ring" id="messageCounter">
+          <svg viewBox="0 0 36 36">
+            <circle class="ring-bg" cx="18" cy="18" r="16"></circle>
+            <circle class="ring-fill" id="ringFill" cx="18" cy="18" r="16"></circle>
+          </svg>
+          <span class="counter-text" id="counterText">0</span>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<section class="recent-posts">
+  <h3>🌍 Recent Reflections</h3>
+  <div id="postsStatus" class="posts-status">Loading reflections…</div>
+  <div id="postsContainer"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
