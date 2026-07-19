@@ -1,5 +1,9 @@
 # Feedback Companion - Interactive Feedback Form
-
+<p align="center">
+  <a href="https://interactive-feedback-form-omega.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-View_Project-2A5C9E?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
+  </a>
+</p>
 A conversational feedback form that transforms the traditional form-filling experience into a natural, engaging dialogue. Built with vanilla HTML, CSS, and JavaScript, this project demonstrates connecting a frontend interface to a REST API.
 
 ## Overview
