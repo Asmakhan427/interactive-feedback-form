@@ -8,8 +8,6 @@ A conversational feedback form that transforms the traditional form-filling expe
 
 This project is a web-based feedback collection tool that feels more like chatting with an assistant than filling out a form. Users are guided through a step-by-step conversation where they provide their name, email, category, rating, and a detailed reflection. The interface adapts to user input with dynamic color changes, visual feedback, and achievement rewards.
 
-The form submits data to a mock API (JSONPlaceholder) and displays recent submissions from other users. All validation happens on the client side with inline, human-friendly error messages.
-
 ## Features
 
 ### Core Functionality
@@ -17,19 +15,13 @@ The form submits data to a mock API (JSONPlaceholder) and displays recent submis
 - Five input fields: name, email, category, rating, message
 - Client-side validation with inline error messages
 - No page reload on submission
-- Loading states with visual feedback
-- Success messages with returned ID from API
-- Error handling that preserves user input
+
 
 ### Bonus Features
 - Fetches and displays 5 most recent submissions
 - Character counter with circular progress ring
 - Fully responsive design for mobile, tablet, and desktop
 - Dynamic color themes based on user rating
-- Achievement system with unlockable badges
-- Particle animation background
-- Confetti celebration on successful submission
-- Time-based greetings
 
 ### Technical Highlights
 - Plain HTML, CSS, and JavaScript (no frameworks)
